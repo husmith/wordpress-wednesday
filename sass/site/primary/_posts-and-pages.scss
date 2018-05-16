@@ -1,22 +1,52 @@
 .sticky {
-	display: block;
+  display: block;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+.home {
+  .site-branding {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .custom-logo-link {
+    display: inline-block;
+    width: 250px;
+  }
+  .post-wrapper {
+    // border: solid 0.2em $color__border-post;
+    // padding: 10px 18px;
+    // width: 100%;
+  }
+  // .posts-wrapper {
+  // 	display: inline-flex;
+  // 	flex-wrap: wrap;
+  // 	justify-content: space-between;
+  // 	align-items: center;
+  // }
+}
+
+.posts-wrapper {
+  //   padding: 36px;
+  //   margin: 0 auto;
+  //   max-width: 960px;
 }

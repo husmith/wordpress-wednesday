@@ -129,8 +129,16 @@ function wednesday_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+
+	wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.min.js', array());
+	wp_enqueue_script('wednesday-masonry', get_template_directory_uri() . '/js/masonry-init.js', array(), '1.0', true);
+	
 }
+
 add_action( 'wp_enqueue_scripts', 'wednesday_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.

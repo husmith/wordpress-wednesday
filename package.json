@@ -1,0 +1,25 @@
+{
+  "name": "wednesday",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husmith/wordpress-wednesday.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/husmith/wordpress-wednesday/issues"
+  },
+  "homepage": "https://github.com/husmith/wordpress-wednesday#readme",
+  "devDependencies": {
+    "es6-promise": "^4.2.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}

@@ -4,9 +4,11 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "primary/posts-and-pages";
+@import 'primary/posts-and-pages';
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-@import "primary/comments";
+@import 'primary/comments';
+
+@import 'pages/front-page';

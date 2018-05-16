@@ -5,6 +5,10 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
+$color__background-1: #0d1a93;
+$color__background-2: #15db95;
+$color__background-3: #080f5b;
+
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
@@ -13,8 +17,11 @@ $color__link-visited: purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
+$color__border-button: #ccc #ccc rgb(41, 20, 20);
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+$color__border-menu: #111;
+$color__border-post: #111;
