@@ -2,10 +2,6 @@
   display: block;
 }
 
-.hentry {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
 }
@@ -14,6 +10,10 @@
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+}
+
+.site-content {
+  min-height: 100%;
 }
 
 .page-links {
@@ -32,21 +32,4 @@
     display: inline-block;
     width: 250px;
   }
-  .post-wrapper {
-    // border: solid 0.2em $color__border-post;
-    // padding: 10px 18px;
-    // width: 100%;
-  }
-  // .posts-wrapper {
-  // 	display: inline-flex;
-  // 	flex-wrap: wrap;
-  // 	justify-content: space-between;
-  // 	align-items: center;
-  // }
-}
-
-.posts-wrapper {
-  //   padding: 36px;
-  //   margin: 0 auto;
-  //   max-width: 960px;
 }

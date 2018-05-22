@@ -1,13 +1,9 @@
 // vanilla JS
 // init with element
-var grid = document.querySelector('.section-wrapper');
+var grid = document.querySelector('.grid');
 var msnry = new Masonry(grid, {
   // options...
-  itemSelector: '.post-wrapper',
-  columnWidth: 50
+  percentPosition: true,
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer'
 });
-
-// // init with selector
-// var msnry = new Masonry('.grid', {
-//   // options...
-// });

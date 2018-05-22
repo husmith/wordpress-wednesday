@@ -1,0 +1,56 @@
+.single-post-page {
+  .single-post-container {
+    // margin: 40px 0;
+  }
+  .post-title {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    word-wrap: break-word;
+    font-family: $font__heading;
+    @include breakpoint(lg) {
+      font-size: 3rem;
+    }
+  }
+  .info-label {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .info-content {
+    margin-bottom: 1rem;
+  }
+  .post-info-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .feature-img-container {
+    width: 50%;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .post-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay-text {
+    padding: 25px;
+    background: $color__background-screen;
+    height: fit-content;
+  }
+  .post-header-container {
+    min-height: 100vh;
+  }
+}

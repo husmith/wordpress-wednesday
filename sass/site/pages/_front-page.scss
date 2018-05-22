@@ -11,6 +11,98 @@
 }
 
 section {
-  border-width: 2em;
-  border-style: solid;
+  //   border-width: 2em;
+  //   border-style: solid;
+  //   background-color: black;
+  .category-listening-to {
+    // background-color: $color__background-3;
+    &:hover {
+      h2,
+      .entry-summary {
+        // color: $color__background-3;
+      }
+    }
+  }
+  .category-eating,
+  .category-drinking {
+    // background-color: $color__background-1;
+    &:hover {
+      h2,
+      .entry-summary {
+        // color: $color__background-1;
+      }
+    }
+  }
+  .category-doing {
+    // background-color: $color__background-2;
+    &:hover {
+      h2,
+      .entry-summary {
+        // color: $color__background-2;
+      }
+    }
+  }
+
+  .card-title,
+  .card-text {
+    font-family: $font__heading;
+    color: black;
+  }
+
+  .post-item {
+    padding: 0;
+    img {
+      filter: grayscale(70%);
+      opacity: 1;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .card-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      line-height: 1;
+      font-weight: 700;
+      word-wrap: break-word;
+      @include breakpoint(lg) {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.post-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  .card-img {
+    border-radius: 0;
+  }
+  .card-img-overlay {
+    padding: 2em;
+    border: none;
+  }
+  .card-text,
+  .card-title {
+    opacity: 0;
+  }
+  &:hover {
+    img {
+      opacity: 0;
+      border-radius: 0;
+    }
+    .card-img-overlay {
+      border: 1em solid black;
+    }
+
+    .card-text,
+    .card-title {
+      opacity: 1;
+    }
+  }
 }

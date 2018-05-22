@@ -11,29 +11,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-wrapper'); ?>> 
-<div class="post-container" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>'">
-	<header class="entry-header">
-
-		<?php if ( is_front_page()) {
-			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
-            the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-        } ?>
-         <!-- <?php if ( has_post_thumbnail()) {
-			$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
-				echo '<img src="'.$featured_img_url.'" class="post-img">'; 
-            }
-            ?> -->
-       <?php if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php the_date('M d, Y', '<h4>', '</h4>'); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	   </div>
-</article><!-- #post-## -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-sm-12 col-md-6 grid-item post-item'); ?>> 
+<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post-wrapper">
+		<img src="<?php !has_post_thumbnail() ?: get_the_post_thumbnail_url(get_the_ID(),'full')?>" class="card-img">
+		<div class="card-img-overlay">
+			<div class="card-title"><?php !is_front_page() ?: the_title()?></div>
+			<div class="card-text post-date d-md-none d-lg-block"><?php get_post_type() !== 'post' ?: the_date('M d, Y', '<h4>', '</h4>'); ?></div>
+       		<div class="card-text post-summary d-md-none d-lg-block"><?php the_excerpt(); ?></div><!-- .entry-summary -->
+		</div>
+	</a>
+	</article><!-- #post-## -->

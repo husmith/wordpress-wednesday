@@ -14,53 +14,17 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             
-            <section class="section-wrapper listening-to">
-                <h4 class="section-header">Music</h4>
-                <div class="posts-wrapper">
+            <section class="section-wrapper container">
+                <div class="grid">
+                    <div class="grid-sizer col-sm-12 col-md-6"></div>
                     <?php
-                        global $post;
-                        $args = array( 'category_name'=>'listening-to');
-                        $myposts = get_posts( $args );
-                        foreach( $myposts as $post ) :
-                            setup_postdata($post); 
+                        while ( have_posts() ) :
+				            the_post(); 
                             get_template_part( 'template-parts/post/content-excerpt', get_post_type() );
-                        endforeach; 
-                            wp_reset_postdata(); 
+                        endwhile;
                     ?>
                 </div>
             </section>
-
-            <section class="section-wrapper doing">
-                <div class="posts-wrapper">
-                    <?php
-                        global $post;
-                        $args = array( 'category_name'=>'doing');
-                        $myposts = get_posts( $args );
-                        foreach( $myposts as $post ) :
-                            setup_postdata($post); 
-                            get_template_part( 'template-parts/post/content-excerpt', get_post_type() );
-                        endforeach; 
-                            wp_reset_postdata(); 
-                    ?>
-                </div>
-            </section>
-            
-            <section class="section-wrapper eating-drinking">
-                <div class="posts-wrapper">
-                    <?php
-                        global $post;
-                        $args = array( 'category_name'=> array('eating','drinking'));
-                        $myposts = get_posts( $args );
-                        foreach( $myposts as $post ) :
-                            setup_postdata($post); 
-                            get_template_part( 'template-parts/post/content-excerpt', get_post_type() );
-                        endforeach; 
-                            wp_reset_postdata(); 
-                    ?>
-                </div>
-            </section>
-
-
     </main>
     <!-- #main -->
     </div>

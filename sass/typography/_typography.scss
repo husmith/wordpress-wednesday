@@ -10,6 +10,12 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 @import "headings";
 
 @import "copy";

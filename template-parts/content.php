@@ -9,29 +9,25 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				wednesday_posted_on();
-				wednesday_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php wednesday_post_thumbnail(); ?>
-
-	<div class="entry-content">
+<article id="post-<?php the_ID(); ?>" <?php post_class('single-post-container'); ?>>
+<div class="post-header-container">
+		<div class="feature-img-container">
+			<div class="post-img" style="background-image: url('<?php !has_post_thumbnail() ?: the_post_thumbnail_url(get_the_ID(),'full')?>');"></div>
+		</div>
+		<div class="post-info-container">
+			<header class="col-sm-12 col-md-9 col-lg-7 offset-lg-5 overlay-text">
+				<div class="post-title"><?php the_title(); ?></div>	
+					<div class="post-date"><?php wednesday_posted_on(); ?> </div><!-- .entry-meta -->
+					<div class="post-info">
+						<h3 class="info-label">Who</h3>
+						<div class="info-content"><?php !in_category('listening-to') ?: the_field('who') ?></div>
+						<h3 class="info-label">Where</h3>
+						<div class="info-content"><?php !in_category('listening-to') ?: the_field('where') ?></div>
+					</div>	
+			</header><!-- .entry-header -->
+			</div>
+</div>
+	<div class="post-content row">
 		<?php
 		the_content( sprintf(
 			wp_kses(

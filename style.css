@@ -41,6 +41,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 	-----------------*/
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%; }
+
 @font-face {
   font-family: 'objectivesuper_italic';
   src: url("assets/fonts/objective/objective-super-italic-webfont.woff2") format("woff2"), url("assets/fonts/objective/objective-super-italic-webfont.woff") format("woff");
@@ -461,19 +467,28 @@ textarea {
   font-size: 0.9rem;
   line-height: 1.5; }
 
-h1, h2, h3, h4, h5, h6 {
+a:hover {
+  text-decoration: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both; }
 
 h1 {
-  font-family: "objectiveblack", Courier, monospace;
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.07em; }
 
-h2, h3 {
+h2,
+h3 {
   text-transform: uppercase;
-  font-family: "objectivemedium";
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.04em; }
+  letter-spacing: 0.05em; }
 
 p {
   margin-bottom: 1.5em; }
@@ -664,44 +679,51 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: inline-flex;
-  width: 100%;
+.site-brand {
+  font-family: 'objectivebold', sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8em; }
+  .site-brand:hover {
+    color: black;
+    background-color: white; }
+
+.menu-main-container {
   text-transform: uppercase;
-  font-family: "objectivebold";
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.05em; }
-  .main-navigation.subpage-nav {
-    justify-content: center;
-    align-items: center;
-    padding: 0.8em; }
-  .main-navigation ul {
+  .menu-main-container ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0; }
-    .main-navigation ul ul {
+    .menu-main-container ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 100%;
       left: -999em;
       z-index: 99999; }
-      .main-navigation ul ul ul {
+      .menu-main-container ul ul ul {
         left: -999em;
         top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
+      .menu-main-container ul ul li:hover > ul,
+      .menu-main-container ul ul li.focus > ul {
         left: 100%; }
-      .main-navigation ul ul a {
+      .menu-main-container ul ul a {
         width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
+    .menu-main-container ul li:hover > ul,
+    .menu-main-container ul li.focus > ul {
       left: auto; }
-  .main-navigation li {
+  .menu-main-container li {
     float: left;
     position: relative; }
-  .main-navigation a {
+  .menu-main-container a {
     display: block;
     text-decoration: none;
     color: #404040; }
@@ -712,6 +734,12 @@ a {
   display: block; }
 
 @media screen and (min-width: 37.5em) {
+  .site-header {
+    display: inline-flex;
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between; }
   .menu-toggle {
     display: none; }
   .menu {
@@ -719,14 +747,13 @@ a {
     justify-content: center;
     width: 100%; }
   .main-navigation ul {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 50%;
-    max-width: 80%; }
+    margin: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
   .main-navigation li {
     width: 150px;
-    text-align: center; } }
+    text-align: left; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -748,12 +775,52 @@ a {
   width: 50%; }
 
 .home .menu {
-  padding: 1.2em 0;
+  padding: 1.2em;
   border-top: 0.2em solid #111;
   border-bottom: 0.2em solid #111; }
 
-.site-logo img {
-  width: 100px; }
+.home .main-navigation ul {
+  margin: 0 12px;
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between; }
+
+.link-container {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px 4px 2px; }
+  .link-container .link {
+    font-size: 0.9rem;
+    font-weight: 700; }
+  .link-container:hover .link {
+    color: white; }
+  .link-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    content: ''; }
+  .link-container:hover::before {
+    -webkit-animation: bg-animation 0.6s 1;
+            animation: bg-animation 0.6s 1;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes bg-animation {
+  0% {
+    width: 10%; }
+  100% {
+    width: 100%; } }
+
+@keyframes bg-animation {
+  0% {
+    width: 10%; }
+  100% {
+    width: 100%; } }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -832,7 +899,7 @@ a {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-  content: "";
+  content: '';
   display: table;
   table-layout: fixed; }
 
@@ -862,9 +929,6 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
-  margin: 0 0 1.5em; }
-
 .updated:not(.published) {
   display: none; }
 
@@ -872,6 +936,9 @@ a {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0; }
+
+.site-content {
+  min-height: 100%; }
 
 .page-links {
   clear: both;
@@ -896,6 +963,9 @@ a {
 .bypostauthor {
   display: block; }
 
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
 .eating-drinking {
   border-color: #0d1a93; }
 
@@ -905,9 +975,104 @@ a {
 .doing {
   border-color: #080f5b; }
 
-section {
-  border-width: 2em;
-  border-style: solid; }
+section .card-title,
+section .card-text {
+  font-family: "Roboto", sans-serif;
+  color: black; }
+
+section .post-item {
+  padding: 0; }
+  section .post-item img {
+    -webkit-filter: grayscale(70%);
+            filter: grayscale(70%);
+    opacity: 1; }
+  section .post-item a:hover {
+    text-decoration: none; }
+  section .post-item .card-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    word-wrap: break-word; }
+    @media (min-width: 64em) {
+      section .post-item .card-title {
+        font-size: 3rem; } }
+
+.post-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+  .post-wrapper .card-img {
+    border-radius: 0; }
+  .post-wrapper .card-img-overlay {
+    padding: 2em;
+    border: none; }
+  .post-wrapper .card-text,
+  .post-wrapper .card-title {
+    opacity: 0; }
+  .post-wrapper:hover img {
+    opacity: 0;
+    border-radius: 0; }
+  .post-wrapper:hover .card-img-overlay {
+    border: 1em solid black; }
+  .post-wrapper:hover .card-text,
+  .post-wrapper:hover .card-title {
+    opacity: 1; }
+
+.single-post-page .post-title {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  word-wrap: break-word;
+  font-family: "Roboto", sans-serif; }
+  @media (min-width: 64em) {
+    .single-post-page .post-title {
+      font-size: 3rem; } }
+
+.single-post-page .info-label {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase; }
+
+.single-post-page .info-content {
+  margin-bottom: 1rem; }
+
+.single-post-page .post-info-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.single-post-page .feature-img-container {
+  width: 50%;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  height: 100vh;
+  overflow: hidden; }
+
+.single-post-page .post-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background-size: cover;
+  background-position: center; }
+
+.single-post-page .overlay-text {
+  padding: 25px;
+  background: #f1f1f1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
+
+.single-post-page .post-header-container {
+  min-height: 100vh; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
