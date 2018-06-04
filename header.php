@@ -24,33 +24,27 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wednesday' ); ?></a>
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ):
-				the_custom_logo(); ?>
-			<?php else: ?>
-				<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-logo"> -->
-				<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-small.svg" width=100 /> -->
-				<!-- </a> -->
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class=""><div class="site-brand">WTF IS HANNAH</div></a>
-			<?php endif?>
-		<?php
+	<div class="container">
+	<header id="masthead" class="site-header fixed-top row">
+		<div class="site-branding col-sm-10 col-md-6">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="">
+				<div class="site-brand">WTF IS HANNAH</div>
+			</a>
+
+			<?php
 			$wednesday_description = get_bloginfo( 'description', 'display' );
 			if ( $wednesday_description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $wednesday_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation <?= is_front_page() || is_home() ? 'homepage-nav' : 'subpage-nav'?>">
-		<?/*
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wednesday' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu'
-			) );
-			?>
-		*/?>
+		<nav id="site-navigation" class="main-navigation d-sm-none d-md-block col-md-6 subpage-nav">
+
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<?php include("assets/images/Orion_menu-hamburger.svg"); ?>
+		</button>
+		
+
 		<div class="menu-main-container">
 		<ul>
 			<li class="link-container"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/music" class="link">Music</a></li>
@@ -61,5 +55,5 @@
 		</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
-
+</div>
 	<div id="content" class="site-content">

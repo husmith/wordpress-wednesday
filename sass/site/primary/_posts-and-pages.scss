@@ -13,23 +13,11 @@
 }
 
 .site-content {
+  padding-top: 89px;
   min-height: 100%;
 }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-}
-
-.home {
-  .site-branding {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .custom-logo-link {
-    display: inline-block;
-    width: 250px;
-  }
 }

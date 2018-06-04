@@ -493,7 +493,10 @@ h3 {
 p {
   margin-bottom: 1.5em; }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic; }
 
 blockquote {
@@ -513,21 +516,32 @@ pre {
   overflow: auto;
   padding: 1.6em; }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: "objectivesuper", Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem; }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none; }
 
 big {
   font-size: 125%; }
+
+p,
+span {
+  font-family: "Fira Mono", monospace;
+  letter-spacing: 0.01em;
+  font-size: 0.86rem; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -697,47 +711,49 @@ a {
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.05em; }
+  .menu-main-container a {
+    display: block;
+    text-decoration: none;
+    color: #404040; }
   .menu-main-container ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0; }
-    .menu-main-container ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999; }
-      .menu-main-container ul ul ul {
-        left: -999em;
-        top: 0; }
-      .menu-main-container ul ul li:hover > ul,
-      .menu-main-container ul ul li.focus > ul {
-        left: 100%; }
-      .menu-main-container ul ul a {
-        width: 200px; }
-    .menu-main-container ul li:hover > ul,
-    .menu-main-container ul li.focus > ul {
-      left: auto; }
-  .menu-main-container li {
-    float: left;
-    position: relative; }
-  .menu-main-container a {
-    display: block;
-    text-decoration: none;
-    color: #404040; }
+
+.site-header {
+  background-color: white; }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block; }
 
+.menu-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em 2em 0 0;
+  height: 70px;
+  width: 70px;
+  background-color: transparent;
+  border: none; }
+
+.main-navigation.toggled {
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .main-navigation.toggled .link-container {
+    color: black; }
+
 @media screen and (min-width: 37.5em) {
   .site-header {
     display: inline-flex;
     width: 100%;
-    padding: 0 20px;
     align-items: center;
     justify-content: space-between; }
   .menu-toggle {
@@ -773,18 +789,6 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
-
-.home .menu {
-  padding: 1.2em;
-  border-top: 0.2em solid #111;
-  border-bottom: 0.2em solid #111; }
-
-.home .main-navigation ul {
-  margin: 0 12px;
-  display: inline-flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between; }
 
 .link-container {
   position: relative;
@@ -938,21 +942,12 @@ a {
   margin: 1.5em 0 0; }
 
 .site-content {
+  padding-top: 89px;
   min-height: 100%; }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
-
-.home .site-branding {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center; }
-
-.home .custom-logo-link {
-  display: inline-block;
-  width: 250px; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -1008,7 +1003,10 @@ section .post-item {
     border-radius: 0; }
   .post-wrapper .card-img-overlay {
     padding: 2em;
-    border: none; }
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
   .post-wrapper .card-text,
   .post-wrapper .card-title {
     opacity: 0; }
@@ -1022,14 +1020,22 @@ section .post-item {
     opacity: 1; }
 
 .single-post-page .post-title {
-  font-size: 2rem;
-  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  font-size: 3rem;
+  line-height: 1.2em;
   font-weight: 700;
   word-wrap: break-word;
-  font-family: "Roboto", sans-serif; }
-  @media (min-width: 64em) {
-    .single-post-page .post-title {
-      font-size: 3rem; } }
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  text-transform: uppercase; }
+
+.single-post-page .down-arrow {
+  max-width: 100px; }
 
 .single-post-page .info-label {
   font-size: 1rem;
@@ -1040,12 +1046,6 @@ section .post-item {
 .single-post-page .info-content {
   margin-bottom: 1rem; }
 
-.single-post-page .post-info-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-
 .single-post-page .feature-img-container {
   width: 50%;
   position: absolute;
@@ -1054,16 +1054,6 @@ section .post-item {
   height: 100vh;
   overflow: hidden; }
 
-.single-post-page .post-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  background-size: cover;
-  background-position: center; }
-
 .single-post-page .overlay-text {
   padding: 25px;
   background: #f1f1f1;
@@ -1071,8 +1061,8 @@ section .post-item {
   height: -moz-fit-content;
   height: fit-content; }
 
-.single-post-page .post-header-container {
-  min-height: 100vh; }
+.single-post-page .post-content {
+  padding-top: 2em; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

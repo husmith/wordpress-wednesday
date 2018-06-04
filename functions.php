@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'wednesday_widgets_init' );
 function wednesday_scripts() {
  
 	
-	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i', false ); 
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Fira+Mono|Roboto:400,400i,500,500i,700,700i,900,900i', false ); 
 	wp_enqueue_style( 'bootstrap_css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' );
 
 	wp_enqueue_script( 'wednesday-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
