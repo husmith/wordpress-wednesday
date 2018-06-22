@@ -15,9 +15,22 @@
 .site-content {
   padding-top: 89px;
   min-height: 100%;
+  padding-bottom: 80px;
 }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.page-banner {
+  font-family: $font__heading;
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: black;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 3px 0px $color__background-1;
+  width: 120%;
+  margin-left: -2%;
 }

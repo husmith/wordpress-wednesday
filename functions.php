@@ -47,6 +47,9 @@ if ( ! function_exists( 'wednesday_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'wednesday' ),
 		) );
 
+		// Add custom post tyeps
+
+    
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.

@@ -11,26 +11,29 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div>
+	<!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer clearfix">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wednesday' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wednesday' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wednesday' ), 'wednesday', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+			<div class="nav-links">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>/about" class="link">About</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>/contact" class="link">Contact</a>
+			</div>
+			<div class="social-links">
+			<a class="social-btn"><?php include("assets/images/Orion_foursquare.svg");?></a>
+			<a class="social-btn"><?php include("assets/images/Orion_instagram.svg");?></a>
+			<a class="social-btn"><?php include("assets/images/Orion_spotify.svg");?></a>
+			</div>
+		</div>
+		<!-- .site-info -->
+	</footer>
+	<!-- #colophon -->
+	</div>
+	<!-- #page -->
 
-<?php wp_footer(); ?>
+	<?php wp_footer(); ?>
 
-</body>
-</html>
+	</body>
+
+	</html>

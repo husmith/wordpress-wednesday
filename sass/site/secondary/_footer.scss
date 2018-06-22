@@ -1,0 +1,39 @@
+$secondary-color: white;
+.site-footer {
+  padding: 0;
+  background-color: black;
+  .site-info {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 20px;
+  }
+  .nav-links {
+    a {
+      text-transform: uppercase;
+      color: $secondary-color;
+      font-family: 'objectivebold', sans-serif;
+      margin-right: 10px;
+    }
+    width: 50%;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .social-links {
+    width: 50%;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .social-btn {
+    max-height: 30px;
+    max-width: 30px;
+    margin-left: 10px;
+    display: inline-block;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
